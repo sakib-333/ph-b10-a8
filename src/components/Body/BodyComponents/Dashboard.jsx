@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Cart from "./Cart";
 
 const Dashboard = () => {
   const [tabCart, setTabCart] = useState(true);
@@ -18,7 +19,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div>
+    <>
       <div className="bg-gadget-100 w-full">
         <div className="max-w-[790px] mx-auto text-white text-center py-4 space-y-3">
           <h1 className="text-xl md:text-2xl lg:text-3xl font-bold">
@@ -49,7 +50,8 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    </div>
+      {tabCart && <Cart />}
+    </>
   );
 };
 
