@@ -5,6 +5,7 @@ import Statistics from "../components/Body/BodyComponents/Statistics";
 import Dashboard from "../components/Body/BodyComponents/Dashboard";
 import About from "../components/Body/BodyComponents/About";
 import PageNotFound from "../components/Body/BodyComponents/PageNotFound";
+import ProductDetails from "../components/Body/BodyComponents/ProductDetails";
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/gadget/:gadgetID",
+        element: <ProductDetails />,
       },
       {
         path: "*",
