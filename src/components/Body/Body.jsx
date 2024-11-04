@@ -1,9 +1,10 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
 const Body = () => {
   return (
     <div className="min-h-screen">
-      <h1>Body</h1>
+      <Outlet />
     </div>
   );
 };
