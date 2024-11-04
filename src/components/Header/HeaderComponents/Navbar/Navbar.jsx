@@ -1,12 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 import CartIcon from "/icons/cart-icon.svg";
 import HeartIcon from "/icons/heart-icon.svg";
 
 const Navbar = () => {
+  let { pathname } = useLocation();
   return (
-    <div className="navbar bg-gadget-100 font-sans px-4 mt-2">
+    <div
+      className={`navbar ${
+        pathname === "/" ? "bg-gadget-100" : "bg-base-200"
+      } font-sans px-5 py-3 rounded-t-xl`}
+    >
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -43,10 +48,20 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <h1 className="font-bold text-white">Gadget Heaven</h1>
+        <h1
+          className={`font-bold ${
+            pathname === "/" ? "text-white" : "text-black"
+          } text-2xl`}
+        >
+          Gadget Heaven
+        </h1>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-white">
+        <ul
+          className={`menu menu-horizontal px-1 ${
+            pathname === "/" ? "text-white" : "text-black"
+          }`}
+        >
           <li>
             <NavLink to={"/"}>Home</NavLink>
           </li>
@@ -61,14 +76,18 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end hidden md:flex md:space-x-4">
+      <div
+        className={`navbar-end hidden md:flex md:space-x-4 ${
+          pathname === "/" ? "text-white" : "text-black"
+        }`}
+      >
         <button className="relative w-9 h-9 bg-white flex items-center justify-center rounded-full">
           <img src={CartIcon} alt="cart-icon" />
-          <small className="absolute -top-3 text-yellow-300 right-0">1</small>
+          <small className="absolute -top-3 right-0">1</small>
         </button>
         <button className="relative w-9 h-9 bg-white flex items-center justify-center rounded-full">
           <img src={HeartIcon} alt="heart-icon" />
-          <small className="absolute -top-3 text-yellow-300 right-0">1</small>
+          <small className="absolute -top-3 right-0">1</small>
         </button>
       </div>
     </div>
