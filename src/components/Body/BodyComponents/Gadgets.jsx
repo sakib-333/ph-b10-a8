@@ -12,7 +12,7 @@ const Gadgets = () => {
       <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold">
         Explore Cutting-Edge Gadgets
       </h1>
-      <div className="my-4 flex">
+      <div className="my-4 flex space-x-4">
         <div className="flex flex-col bg-white p-3 w-fit h-fit space-y-3 border rounded-xl">
           {buttons.map((btn, indx) => (
             <button
