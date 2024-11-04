@@ -10,8 +10,10 @@ const Root = () => {
 
   return (
     <>
-      <Header />
-      <Body />
+      <div className="p-3 max-w-screen-2xl mx-auto">
+        <Header />
+        <Body />
+      </div>
       <Footer />
     </>
   );

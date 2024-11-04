@@ -6,7 +6,7 @@ import HeartIcon from "/icons/heart-icon.svg";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-gadget-100 font-sans p-0 mt-2">
+    <div className="navbar bg-gadget-100 font-sans px-4 mt-2">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -43,9 +43,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <h1 className="font-bold md:text-xl lg:text-[28px] text-white">
-          Book Vibe
-        </h1>
+        <h1 className="font-bold text-white">Gadget Heaven</h1>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-white">
