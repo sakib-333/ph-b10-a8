@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Gadget from "./Gadget";
 
 const Gadgets = () => {
   const buttons = ["All Product", "Laptops", "Phones", "Cameras", "Air Pods"];
@@ -27,7 +28,9 @@ const Gadgets = () => {
             </button>
           ))}
         </div>
-        <div></div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <Gadget />
+        </div>
       </div>
     </div>
   );
