@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Cart from "./Cart";
+import Wishlist from "./Wishlist";
 
 const Dashboard = () => {
   const [tabCart, setTabCart] = useState(true);
@@ -51,6 +52,7 @@ const Dashboard = () => {
         </div>
       </div>
       {tabCart && <Cart />}
+      {tabWishlist && <Wishlist />}
     </>
   );
 };
