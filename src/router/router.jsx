@@ -4,6 +4,7 @@ import Home from "../components/Body/BodyComponents/Home";
 import Statistics from "../components/Body/BodyComponents/Statistics";
 import Dashboard from "../components/Body/BodyComponents/Dashboard";
 import About from "../components/Body/BodyComponents/About";
+import PageNotFound from "../components/Body/BodyComponents/PageNotFound";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "*",
+        element: <PageNotFound />,
       },
     ],
   },
