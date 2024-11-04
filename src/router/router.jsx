@@ -3,6 +3,7 @@ import Root from "../components/Root/Root";
 import Home from "../components/Body/BodyComponents/Home";
 import Statistics from "../components/Body/BodyComponents/Statistics";
 import Dashboard from "../components/Body/BodyComponents/Dashboard";
+import About from "../components/Body/BodyComponents/About";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
     ],
   },
