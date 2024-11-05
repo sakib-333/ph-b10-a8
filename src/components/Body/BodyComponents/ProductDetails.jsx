@@ -6,9 +6,10 @@ import CartWhiteIcon from "/icons/cart-white-icon.svg";
 import HeartIcon from "/icons/heart-icon.svg";
 import { useMatch } from "react-router-dom";
 import { GadgetHavenContext } from "../../context/GadgetHavenContext";
+import { AddToCart } from "../../Utilities/AddToCart";
 
 const ProductDetails = () => {
-  const { gadgets } = useContext(GadgetHavenContext);
+  const { gadgets, cart, setCart } = useContext(GadgetHavenContext);
   const { params } = useMatch("/gadget/:id");
   const selectedGadget = gadgets.find(
     (gadget) => gadget.product_id == params.id
@@ -70,7 +71,10 @@ const ProductDetails = () => {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <button className="flex items-center px-4 py-2 bg-gadget-100 hover:opacity-50 text-white rounded-2xl">
+            <button
+              onClick={() => AddToCart(cart, setCart, selectedGadget.product_id)}
+              className="flex items-center px-4 py-2 bg-gadget-100 hover:opacity-50 text-white rounded-2xl"
+            >
               <span>Add To Card</span>
               <img src={CartWhiteIcon} alt="cart-icon" />
             </button>

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
 import CartIcon from "/icons/cart-icon.svg";
 import HeartIcon from "/icons/heart-icon.svg";
+import { GadgetHavenContext } from "../../../context/GadgetHavenContext";
 
 const Navbar = () => {
   let { pathname } = useLocation();
+  const { cart } = useContext(GadgetHavenContext);
   return (
     <div
       className={`navbar ${
@@ -83,7 +85,9 @@ const Navbar = () => {
       >
         <button className="relative w-9 h-9 bg-white flex items-center justify-center rounded-full">
           <img src={CartIcon} alt="cart-icon" />
-          <small className="absolute -top-3 right-0">1</small>
+          <small className="absolute -top-3 right-0">
+            {cart.length ? cart.length : ""}
+          </small>
         </button>
         <button className="relative w-9 h-9 bg-white flex items-center justify-center rounded-full">
           <img src={HeartIcon} alt="heart-icon" />
