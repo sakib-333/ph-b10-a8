@@ -8,12 +8,12 @@ const Gadgets = () => {
   const handleActiveButton = (indx) => setActiveButton(indx);
 
   return (
-    <div className="mt-[200px]">
+    <div className="mt-[200px] p-3">
       <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold">
         Explore Cutting-Edge Gadgets
       </h1>
-      <div className="my-4 flex space-x-4">
-        <div className="flex flex-col bg-white p-3 w-fit h-fit space-y-3 border rounded-xl">
+      <div className="my-4 mx-auto space-y-3 md:space-y-0 md:flex md:space-x-4">
+        <div className="flex flex-col bg-white p-3 md:w-fit h-fit space-y-3 border rounded-xl">
           {buttons.map((btn, indx) => (
             <button
               onClick={() => handleActiveButton(indx)}
@@ -28,7 +28,7 @@ const Gadgets = () => {
             </button>
           ))}
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 justify-center gap-4">
           <Gadget />
         </div>
       </div>

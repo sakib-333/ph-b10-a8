@@ -3,7 +3,7 @@ import CancelIcon from "/icons/cancel-icon.svg";
 
 const Wishlist = () => {
   return (
-    <div className="my-5">
+    <div className="my-5 p-3">
       <div className="flex items-center justify-between">
         <h1 className="font-bold">WishList</h1>
       </div>

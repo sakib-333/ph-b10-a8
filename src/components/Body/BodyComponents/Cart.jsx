@@ -4,7 +4,7 @@ import CancelIcon from "/icons/cancel-icon.svg";
 
 const Cart = () => {
   return (
-    <div className="my-5">
+    <div className="my-5 p-3">
       <div className="flex items-center justify-between">
         <h1 className="font-bold">Cart</h1>
         <div className="flex items-center space-x-3">

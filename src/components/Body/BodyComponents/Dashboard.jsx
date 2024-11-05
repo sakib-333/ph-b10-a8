@@ -21,7 +21,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="bg-gadget-100 w-full">
+      <div className="bg-gadget-100 w-full p-3">
         <div className="max-w-[790px] mx-auto text-white text-center py-4 space-y-3">
           <h1 className="text-xl md:text-2xl lg:text-3xl font-bold">
             Dashboard
