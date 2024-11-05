@@ -10,7 +10,7 @@ import { AddToCart } from "../../Utilities/AddToCart";
 import { AddToWishList } from "../../Utilities/AddToWishList";
 
 const ProductDetails = () => {
-  const { gadgets, cart, setCart, wishlist, setWishlist } =
+  const { gadgets, cart, setCart, wishlist, setWishlist, setTotalPrice } =
     useContext(GadgetHavenContext);
   const { params } = useMatch("/gadget/:id");
   const selectedGadget = gadgets.find(
@@ -75,7 +75,13 @@ const ProductDetails = () => {
           <div className="flex items-center space-x-4">
             <button
               onClick={() =>
-                AddToCart(cart, setCart, selectedGadget.product_id)
+                AddToCart(
+                  cart,
+                  setCart,
+                  selectedGadget.product_id,
+                  setTotalPrice,
+                  Number(selectedGadget.price)
+                )
               }
               className="flex items-center px-4 py-2 bg-gadget-100 hover:opacity-50 text-white rounded-2xl"
             >

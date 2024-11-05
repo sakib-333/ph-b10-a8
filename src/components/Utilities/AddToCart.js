@@ -1,5 +1,17 @@
-export const AddToCart = (cart, setCart, product) => {
+export const AddToCart = (
+  cart,
+  setCart,
+  product,
+  setTotalPrice,
+  productPrice
+) => {
   if (!cart.includes(product)) {
     setCart((c) => [...c, product]);
+    setTotalPrice((currPrice) => {
+      let total = currPrice + productPrice;
+      total = total.toFixed(2);
+      total = Number(total);
+      return total;
+    });
   }
 };

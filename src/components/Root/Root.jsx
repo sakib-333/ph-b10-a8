@@ -11,11 +11,21 @@ const Root = () => {
   const [gadgets, setGadgets] = useState([]);
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   return (
     <>
       <GadgetHavenContext.Provider
-        value={{ gadgets, setGadgets, cart, setCart, wishlist, setWishlist }}
+        value={{
+          gadgets,
+          setGadgets,
+          cart,
+          setCart,
+          wishlist,
+          setWishlist,
+          totalPrice,
+          setTotalPrice,
+        }}
         className="max-w-screen-2xl p-2 mx-auto bg-base-200"
       >
         {location.pathname === "/" ? (

@@ -5,7 +5,8 @@ import { GadgetHavenContext } from "../../context/GadgetHavenContext";
 import { RemoveFromCart } from "../../Utilities/RemoveFromCart";
 
 const Cart = () => {
-  const { gadgets, cart, setCart } = useContext(GadgetHavenContext);
+  const { gadgets, cart, setCart, totalPrice, setTotalPrice } =
+    useContext(GadgetHavenContext);
 
   const cartProducts = gadgets.filter((gadget) => {
     if (cart.includes(gadget.product_id)) {
@@ -18,7 +19,7 @@ const Cart = () => {
       <div className="flex flex-col md:flex-row items-center justify-between">
         <h1 className="font-bold">Cart</h1>
         <div className="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-3">
-          <h1 className="font-bold">Total cost: 999.99</h1>
+          <h1 className="font-bold">Total cost: {totalPrice}</h1>
           <button className="flex items-center border border-gadget-100 px-4 py-1 rounded-full font-bold text-gadget-100 hover:opacity-50">
             <span>Sort by Price</span> <img src={SortIcon} alt="sort" />
           </button>
@@ -47,7 +48,14 @@ const Cart = () => {
             </div>
             <button
               className="hover:opacity-50"
-              onClick={() => RemoveFromCart(setCart, p.product_id)}
+              onClick={() =>
+                RemoveFromCart(
+                  setCart,
+                  p.product_id,
+                  setTotalPrice,
+                  Number(p.price)
+                )
+              }
             >
               <img src={CancelIcon} alt="cancel icon" />
             </button>
