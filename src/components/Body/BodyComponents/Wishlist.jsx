@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import CancelIcon from "/icons/cancel-icon.svg";
 import { GadgetHavenContext } from "../../context/GadgetHavenContext";
+import { RemoveFromWishlist } from "../../Utilities/RemoveFromWishlist";
 
 const Wishlist = () => {
-  const { gadgets, wishlist } = useContext(GadgetHavenContext);
+  const { gadgets, wishlist, setWishlist } = useContext(GadgetHavenContext);
   const finalWishlist = gadgets.filter((gadget) =>
     wishlist.includes(gadget.product_id)
   );
@@ -30,7 +31,10 @@ const Wishlist = () => {
                 <strong>Price: $ {gadget.price}</strong>
               </div>
             </div>
-            <button className="hover:opacity-50">
+            <button
+              className="hover:opacity-50"
+              onClick={() => RemoveFromWishlist(setWishlist, gadget.product_id)}
+            >
               <img src={CancelIcon} alt="cancel icon" />
             </button>
           </div>
