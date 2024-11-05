@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import SortIcon from "/icons/sort-icon.svg";
 import CancelIcon from "/icons/cancel-icon.svg";
 import { GadgetHavenContext } from "../../context/GadgetHavenContext";
+import { RemoveFromCart } from "../../Utilities/RemoveFromCart";
 
 const Cart = () => {
-  const { gadgets, cart } = useContext(GadgetHavenContext);
+  const { gadgets, cart, setCart } = useContext(GadgetHavenContext);
 
   const cartProducts = gadgets.filter((gadget) => {
     if (cart.includes(gadget.product_id)) {
@@ -44,7 +45,10 @@ const Cart = () => {
                 <strong>Price: $ {p.price}</strong>
               </div>
             </div>
-            <button className="hover:opacity-50">
+            <button
+              className="hover:opacity-50"
+              onClick={() => RemoveFromCart(setCart, p.product_id)}
+            >
               <img src={CancelIcon} alt="cancel icon" />
             </button>
           </div>
