@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import SortIcon from "/icons/sort-icon.svg";
 import CancelIcon from "/icons/cancel-icon.svg";
+import { GadgetHavenContext } from "../../context/GadgetHavenContext";
 
 const Cart = () => {
+  const { gadgets, cart } = useContext(GadgetHavenContext);
+
+  const cartProducts = gadgets.filter((gadget) => {
+    if (cart.includes(gadget.product_id)) {
+      return gadget;
+    }
+  });
+
   return (
     <div className="my-5 p-3">
       <div className="flex flex-col md:flex-row items-center justify-between">
@@ -17,27 +26,29 @@ const Cart = () => {
           </button>
         </div>
       </div>
-      <div className="my-4">
-        <div className="bg-white px-4 flex flex-col md:flex-row items-center justify-between rounded-xl overflow-hidden">
-          <div className="w-full flex flex-col md:flex-row items-center">
-            <img
-              className="w-40 h-40"
-              src="https://i.postimg.cc/wjGTSXbv/asus-1.jpg"
-              alt=""
-            />
-            <div>
-              <h1 className="text-xl font-bold">Samsung Galaxy S23 Ultra</h1>
-              <p className="text-gray-500">
-                Ultra-slim, high-performance laptop with 13.4-inch Infinity Edge
-                display.
-              </p>
-              <strong>Price: $ 999.99</strong>
+      <div className="my-4 space-y-3">
+        {cartProducts.map((p) => (
+          <div
+            key={p.product_id}
+            className="border bg-white px-4 flex flex-col md:flex-row items-center justify-between rounded-xl overflow-hidden"
+          >
+            <div className="w-full flex flex-col md:flex-row items-center">
+              <img
+                className="w-40 h-40"
+                src={p.product_image}
+                alt={p.product_title}
+              />
+              <div>
+                <h1 className="text-xl font-bold">{p.product_title}</h1>
+                <p className="text-gray-500">{p.description}</p>
+                <strong>Price: $ {p.price}</strong>
+              </div>
             </div>
+            <button className="hover:opacity-50">
+              <img src={CancelIcon} alt="cancel icon" />
+            </button>
           </div>
-          <button className="hover:opacity-50">
-            <img src={CancelIcon} alt="cancel icon" />
-          </button>
-        </div>
+        ))}
       </div>
     </div>
   );
