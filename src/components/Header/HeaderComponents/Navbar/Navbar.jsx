@@ -7,7 +7,7 @@ import { GadgetHavenContext } from "../../../context/GadgetHavenContext";
 
 const Navbar = () => {
   let { pathname } = useLocation();
-  const { cart } = useContext(GadgetHavenContext);
+  const { cart, wishlist } = useContext(GadgetHavenContext);
   return (
     <div
       className={`navbar ${
@@ -91,7 +91,9 @@ const Navbar = () => {
         </button>
         <button className="relative w-9 h-9 bg-white flex items-center justify-center rounded-full">
           <img src={HeartIcon} alt="heart-icon" />
-          <small className="absolute -top-3 right-0">1</small>
+          <small className="absolute -top-3 right-0">
+            {wishlist.length ? wishlist.length : ""}
+          </small>
         </button>
       </div>
     </div>
