@@ -1,14 +1,23 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Gadget from "./Gadget";
 import { GadgetHavenContext } from "../../context/GadgetHavenContext";
+import { FilterGadgets } from "../../Utilities/FilterGadgets";
 
 const Gadgets = () => {
   const { gadgets } = useContext(GadgetHavenContext);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    setProducts(() => gadgets);
+  }, [gadgets]);
 
   const buttons = ["All Product", "Laptops", "Phones", "Cameras", "Air Pods"];
   const [activeButton, setActiveButton] = useState(0);
 
-  const handleActiveButton = (indx) => setActiveButton(indx);
+  const handleActiveButton = (indx) => {
+    setActiveButton(indx);
+    FilterGadgets([...gadgets], buttons[indx].toLowerCase(), setProducts);
+  };
 
   return (
     <div className="mt-[200px] p-3">
@@ -32,8 +41,8 @@ const Gadgets = () => {
           ))}
         </div>
         <div className=" px-4 w-full grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-          {gadgets.map((gadget) => (
-            <Gadget gadget={gadget} key={gadget.product_id} />
+          {products.map((product) => (
+            <Gadget product={product} key={product.product_id} />
           ))}
         </div>
       </div>

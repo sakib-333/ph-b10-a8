@@ -54,7 +54,7 @@
     "product_id": "air_5",
     "product_title": "Anker Soundcore Liberty Air 2 Pro",
     "product_image": "https://i.postimg.cc/d0Vr9jZV/air-phone-1.jpg",
-    "category": "airphones",
+    "category": "air pods",
     "price": 129.99,
     "description": "Affordable earbuds with strong performance and customizable sound.",
     "Specification": [
@@ -156,7 +156,7 @@
     "product_id": "air_3",
     "product_title": "Sony WF-1000XM4",
     "product_image": "https://i.postimg.cc/3xVYLKd0/earphone-1.jpg",
-    "category": "airphones",
+    "category": "air pods",
     "price": 279.99,
     "description": "Industry-leading noise cancelling with exceptional sound quality.",
     "Specification": [
@@ -207,7 +207,7 @@
     "product_id": "air_1",
     "product_title": "Apple AirPods Pro",
     "product_image": "https://i.postimg.cc/G357T9ND/air-pod.jpg",
-    "category": "airphones",
+    "category": "air pods",
     "price": 249.99,
     "description": "Premium noise-cancelling earbuds with superior sound quality.",
     "Specification": [
@@ -258,7 +258,7 @@
     "product_id": "air_4",
     "product_title": "Jabra Elite 75t",
     "product_image": "https://i.postimg.cc/rpV3C39R/jorba.jpg",
-    "category": "airphones",
+    "category": "air pods",
     "price": 179.99,
     "description": "Compact and comfortable earbuds with great sound and call quality.",
     "Specification": [
@@ -326,7 +326,7 @@
     "product_id": "air_2",
     "product_title": "Samsung Galaxy Buds Pro",
     "product_image": "https://i.postimg.cc/nhzq41Dc/sm-air.jpg",
-    "category": "airphones",
+    "category": "air pods",
     "price": 199.99,
     "description": "Feature-rich earbuds with excellent sound and active noise cancelling.",
     "Specification": [
@@ -377,7 +377,7 @@
     "product_id": "air_6",
     "product_title": "Bose QuietComfort Earbuds",
     "product_image": "https://i.postimg.cc/Tw9PNz88/bose-pod.jpg",
-    "category": "airphones",
+    "category": "air pods",
     "price": 279.0,
     "description": "Exceptional noise cancelling and sound quality in a comfortable design.",
     "Specification": [
