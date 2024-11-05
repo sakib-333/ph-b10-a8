@@ -15,6 +15,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: () => fetch("/data/gadgets.json"),
       },
       {
         path: "/statistics",
