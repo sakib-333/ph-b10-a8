@@ -12,7 +12,7 @@ const Navbar = () => {
         pathname === "/" ? "bg-gadget-100" : "bg-base-200"
       } font-sans px-5 py-3 rounded-t-xl`}
     >
-      <div className="navbar-start">
+      <div className="lg:navbar-start w-full">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -49,7 +49,7 @@ const Navbar = () => {
           </ul>
         </div>
         <h1
-          className={`font-bold ${
+          className={`font-bold w-full ${
             pathname === "/" ? "text-white" : "text-black"
           } text-2xl`}
         >

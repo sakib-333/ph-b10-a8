@@ -11,11 +11,10 @@ const Footer = () => {
           Leading the way in cutting-edge technology and innovation.
         </p>
         <hr />
-        <div className="flex justify-around">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           <ul className="text-gray-500 text-sm space-y-2">
             <li className="text-black font-bold">Services</li>
             <li>
-              {" "}
               <a href="#"> Product Support </a>
             </li>
             <li>
