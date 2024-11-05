@@ -3,14 +3,17 @@ import SortIcon from "/icons/sort-icon.svg";
 import CancelIcon from "/icons/cancel-icon.svg";
 import { GadgetHavenContext } from "../../context/GadgetHavenContext";
 import { RemoveFromCart } from "../../Utilities/RemoveFromCart";
+import { SortCartGadgets } from "../../Utilities/SortCartGadgets";
 
 const Cart = () => {
   const { gadgets, cart, setCart, totalPrice, setTotalPrice } =
     useContext(GadgetHavenContext);
 
-  const cartProducts = gadgets.filter((gadget) => {
-    if (cart.includes(gadget.product_id)) {
-      return gadget;
+  const cartProducts = cart.map((id) => {
+    for (let gadget of gadgets) {
+      if (gadget.product_id === id) {
+        return gadget;
+      }
     }
   });
 
@@ -20,7 +23,10 @@ const Cart = () => {
         <h1 className="font-bold">Cart</h1>
         <div className="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-3">
           <h1 className="font-bold">Total cost: {totalPrice}</h1>
-          <button className="flex items-center border border-gadget-100 px-4 py-1 rounded-full font-bold text-gadget-100 hover:opacity-50">
+          <button
+            className="flex items-center border border-gadget-100 px-4 py-1 rounded-full font-bold text-gadget-100 hover:opacity-50"
+            onClick={() => SortCartGadgets(cartProducts, setCart)}
+          >
             <span>Sort by Price</span> <img src={SortIcon} alt="sort" />
           </button>
           <button className="flex items-center bg-gadget-100 px-4 py-1 rounded-full font-bold text-white hover:opacity-50">
