@@ -20,7 +20,7 @@ const ProductDetails = () => {
           level. From smart devices to the coolest accessories, we have it all!
         </p>
       </div>
-      <div className="md:flex items-center absolute mx-auto -bottom-[290px] right-0 left-0 max-w-screen-lg w-full bg-white rounded-xl overflow-hidden">
+      <div className="flex flex-col p-4 lg:p-0 md:flex-row items-center lg:absolute lg:mx-auto lg:-bottom-[290px] right-0 left-0 max-w-screen-lg w-full bg-white lg:rounded-xl overflow-hidden">
         <div className="w-[300px]">
           <img
             className="w-full object-cover"

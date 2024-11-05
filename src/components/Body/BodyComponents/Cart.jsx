@@ -5,9 +5,9 @@ import CancelIcon from "/icons/cancel-icon.svg";
 const Cart = () => {
   return (
     <div className="my-5 p-3">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row items-center justify-between">
         <h1 className="font-bold">Cart</h1>
-        <div className="flex items-center space-x-3">
+        <div className="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-3">
           <h1 className="font-bold">Total cost: 999.99</h1>
           <button className="flex items-center border border-gadget-100 px-4 py-1 rounded-full font-bold text-gadget-100 hover:opacity-50">
             <span>Sort by Price</span> <img src={SortIcon} alt="sort" />
@@ -18,8 +18,8 @@ const Cart = () => {
         </div>
       </div>
       <div className="my-4">
-        <div className="bg-white px-4 flex items-center justify-between rounded-xl overflow-hidden">
-          <div className="w-full flex items-center">
+        <div className="bg-white px-4 flex flex-col md:flex-row items-center justify-between rounded-xl overflow-hidden">
+          <div className="w-full flex flex-col md:flex-row items-center">
             <img
               className="w-40 h-40"
               src="https://i.postimg.cc/wjGTSXbv/asus-1.jpg"

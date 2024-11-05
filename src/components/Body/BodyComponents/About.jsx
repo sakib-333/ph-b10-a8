@@ -5,8 +5,10 @@ const About = () => {
     document.title = "About";
   }, []);
   return (
-    <section className="container mx-auto mt-10">
-      <h2 className="text-3xl font-bold text-center text-gadget-100">About Us</h2>
+    <section className="container mx-auto mt-10 p-3">
+      <h2 className="text-3xl font-bold text-center text-gadget-100">
+        About Us
+      </h2>
       <p className="mt-4 text-gray-700">
         Welcome to <strong>Gadget Haven</strong>, where we believe in delivering
         quality products at unbeatable prices. Our goal is to provide a seamless

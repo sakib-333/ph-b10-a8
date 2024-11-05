@@ -10,7 +10,7 @@ const Root = () => {
 
   return (
     <>
-      <div className="max-w-screen-2xl mx-auto bg-base-200">
+      <div className="max-w-screen-2xl p-2 mx-auto bg-base-200">
         {location.pathname === "/" ? (
           <div className="w-full border-2 outline rounded-xl outline-gray-400">
             <Header />
