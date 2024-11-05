@@ -1,16 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Header from "../Header/Header";
 import Body from "../Body/Body";
 import Footer from "../Footer/Footer";
 import { useLocation } from "react-router-dom";
 import Banner from "../Body/BodyComponents/Banner";
+import { GadgetHavenContext } from "../context/GadgetHavenContext";
 
 const Root = () => {
   let location = useLocation();
+  const [gadgets, setGadgets] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
 
   return (
     <>
-      <div className="max-w-screen-2xl p-2 mx-auto bg-base-200">
+      <GadgetHavenContext.Provider
+        value={{ gadgets, setGadgets, cart, setCart, wishlist, setWishlist }}
+        className="max-w-screen-2xl p-2 mx-auto bg-base-200"
+      >
         {location.pathname === "/" ? (
           <div className="w-full border-2 outline rounded-xl outline-gray-400">
             <Header />
@@ -20,7 +27,7 @@ const Root = () => {
           <Header />
         )}
         <Body />
-      </div>
+      </GadgetHavenContext.Provider>
       <Footer />
     </>
   );
