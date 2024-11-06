@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Gadget from "./Gadget";
 import { GadgetHavenContext } from "../../context/GadgetHavenContext";
 import { FilterGadgets } from "../../Utilities/FilterGadgets";
+import DataNotFound from "./DataNotFound";
 
 const Gadgets = () => {
   const { gadgets } = useContext(GadgetHavenContext);
@@ -11,7 +12,14 @@ const Gadgets = () => {
     setProducts(() => gadgets);
   }, [gadgets]);
 
-  const buttons = ["All Product", "Laptops", "Phones", "Cameras", "Air Pods"];
+  const buttons = [
+    "All Product",
+    "Laptops",
+    "Phones",
+    "Cameras",
+    "Air Pods",
+    "Chargers",
+  ];
   const [activeButton, setActiveButton] = useState(0);
 
   const handleActiveButton = (indx) => {
@@ -40,11 +48,15 @@ const Gadgets = () => {
             </button>
           ))}
         </div>
-        <div className=" px-4 w-full grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-          {products.map((product) => (
-            <Gadget product={product} key={product.product_id} />
-          ))}
-        </div>
+        {products.length > 0 ? (
+          <div className=" px-4 w-full grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {products.map((product) => (
+              <Gadget product={product} key={product.product_id} />
+            ))}
+          </div>
+        ) : (
+          <DataNotFound />
+        )}
       </div>
     </div>
   );
