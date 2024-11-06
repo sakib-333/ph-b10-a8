@@ -57,9 +57,9 @@ const Cart = () => {
         </div>
       </div>
       <div className="my-4 space-y-3">
-        {cartProducts.map((p) => (
+        {cartProducts.map((p, indx) => (
           <div
-            key={p.product_id}
+            key={indx}
             className="border bg-white px-4 flex flex-col md:flex-row items-center justify-between rounded-xl overflow-hidden"
           >
             <div className="w-full flex flex-col md:flex-row items-center">
@@ -77,12 +77,7 @@ const Cart = () => {
             <button
               className="hover:opacity-50"
               onClick={() =>
-                RemoveFromCart(
-                  setCart,
-                  p.product_id,
-                  setTotalPrice,
-                  Number(p.price)
-                )
+                RemoveFromCart(setCart, setTotalPrice, Number(p.price), indx)
               }
             >
               <img src={CancelIcon} alt="cancel icon" />

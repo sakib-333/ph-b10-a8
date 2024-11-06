@@ -1,12 +1,8 @@
 import { ShowToastMessage } from "./ShowToastMessage";
 
-export const RemoveFromCart = (
-  setCart,
-  productID,
-  setTotalPrice,
-  productPrice
-) => {
-  setCart((currCart) => currCart.filter((id) => id !== productID));
+export const RemoveFromCart = (setCart, setTotalPrice, productPrice, indx) => {
+  setCart((currCart) => currCart.filter((item, i) => i !== indx));
+
   setTotalPrice((currPrice) => {
     let total = currPrice - productPrice;
     total = total.toFixed(2);

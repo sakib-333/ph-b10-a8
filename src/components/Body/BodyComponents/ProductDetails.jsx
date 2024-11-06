@@ -74,7 +74,6 @@ const ProductDetails = () => {
             <button
               onClick={() =>
                 AddToCart(
-                  cart,
                   setCart,
                   selectedGadget.product_id,
                   setTotalPrice,
@@ -87,7 +86,11 @@ const ProductDetails = () => {
               <img src={CartWhiteIcon} alt="cart-icon" />
             </button>
             <button
-              className="relative w-10 h-10 bg-white flex items-center justify-center rounded-full border hover:bg-slate-200"
+              className={`relative w-10 h-10 bg-white flex items-center justify-center rounded-full border ${
+                wishlist.includes(selectedGadget.product_id)
+                  ? ""
+                  : "hover:bg-slate-200"
+              }`}
               onClick={() =>
                 AddToWishList(wishlist, setWishlist, selectedGadget.product_id)
               }
