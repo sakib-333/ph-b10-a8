@@ -1,13 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import SortIcon from "/icons/sort-icon.svg";
 import CancelIcon from "/icons/cancel-icon.svg";
 import { GadgetHavenContext } from "../../context/GadgetHavenContext";
 import { RemoveFromCart } from "../../Utilities/RemoveFromCart";
 import { SortCartGadgets } from "../../Utilities/SortCartGadgets";
+import DoneIcon from "/images/group.png";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { gadgets, cart, setCart, totalPrice, setTotalPrice } =
     useContext(GadgetHavenContext);
+  const [showModal, setShowModal] = useState(true);
+  const navigate = useNavigate();
 
   const cartProducts = cart.map((id) => {
     for (let gadget of gadgets) {
@@ -16,6 +20,17 @@ const Cart = () => {
       }
     }
   });
+
+  const handlePurchaseGadgets = () => {
+    purchase_modal.showModal();
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setTotalPrice(0);
+    setCart([]);
+    navigate("/");
+  };
 
   return (
     <div className="my-5 p-3">
@@ -29,7 +44,14 @@ const Cart = () => {
           >
             <span>Sort by Price</span> <img src={SortIcon} alt="sort" />
           </button>
-          <button className="flex items-center bg-gadget-100 px-4 py-1 rounded-full font-bold text-white hover:opacity-50">
+          <button
+            type="button"
+            className={`flex items-center bg-gadget-100 px-4 py-1 rounded-full font-bold text-white ${
+              totalPrice === 0 ? "opacity-40" : "hover:opacity-50"
+            }`}
+            disabled={totalPrice === 0 ? true : false}
+            onClick={handlePurchaseGadgets}
+          >
             Purchase
           </button>
         </div>
@@ -68,6 +90,26 @@ const Cart = () => {
           </div>
         ))}
       </div>
+      {showModal && (
+        <dialog id="purchase_modal" className="modal modal-middle">
+          <div className="modal-box flex flex-col items-center space-y-3">
+            <img src={DoneIcon} alt="Done icon" />
+            <h3 className="font-bold text-xl">Payment Successfully</h3>
+            <div className="divider"></div>
+            <p className="text-gray-500">Thanks for purchasing.</p>
+            <p className="text-gray-500">Total: {totalPrice}</p>
+            <div className="modal-action w-full">
+              <button
+                className="btn w-full rounded-full"
+                onClick={handleCloseModal}
+              >
+                Close
+              </button>
+              <form method="dialog w-full border"></form>
+            </div>
+          </div>
+        </dialog>
+      )}
     </div>
   );
 };
