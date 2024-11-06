@@ -4,7 +4,7 @@
     "product_title": "Lenovo ThinkPad X1 Carbon",
     "product_image": "https://i.postimg.cc/nrbtkMW3/lenevo-laptop-1.jpg",
     "category": "laptops",
-    "price": 1299.99,
+    "price": 1290.99,
     "description": "Business laptop with exceptional durability and performance.",
     "Specification": [
       "14-inch display",
@@ -123,7 +123,7 @@
     "product_title": "GoPro HERO10 Black",
     "product_image": "https://i.postimg.cc/R02hn7c8/GoPro-1.jpg",
     "category": "cameras",
-    "price": 399.99,
+    "price": 379.99,
     "description": "Durable action camera with stunning video quality and stabilization.",
     "Specification": [
       "23MP sensor",
@@ -242,7 +242,7 @@
     "product_title": "Huawei P40 Lite",
     "product_image": "https://i.postimg.cc/13cbFsDZ/huawei.jpg",
     "category": "phones",
-    "price": 199.99,
+    "price": 191.99,
     "description": "Affordable smartphone with essential features for everyday use.",
     "Specification": [
       "6.1-inch display",
@@ -327,7 +327,7 @@
     "product_title": "Samsung Galaxy Buds Pro",
     "product_image": "https://i.postimg.cc/nhzq41Dc/sm-air.jpg",
     "category": "air pods",
-    "price": 199.99,
+    "price": 769.99,
     "description": "Feature-rich earbuds with excellent sound and active noise cancelling.",
     "Specification": [
       "Intelligent active noise cancellation",

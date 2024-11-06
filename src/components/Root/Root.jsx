@@ -22,29 +22,30 @@ const Root = () => {
 
   return (
     <>
-      <GadgetHavenContext.Provider
-        value={{
-          gadgets,
-          setGadgets,
-          cart,
-          setCart,
-          wishlist,
-          setWishlist,
-          totalPrice,
-          setTotalPrice,
-        }}
-        className="max-w-screen-2xl p-2 mx-auto bg-base-200"
-      >
-        {location.pathname === "/" ? (
-          <div className="w-full border-2 outline rounded-xl outline-gray-400">
+      <div className="max-w-screen-2xl p-3 mx-auto bg-base-200">
+        <GadgetHavenContext.Provider
+          value={{
+            gadgets,
+            setGadgets,
+            cart,
+            setCart,
+            wishlist,
+            setWishlist,
+            totalPrice,
+            setTotalPrice,
+          }}
+        >
+          {location.pathname === "/" ? (
+            <div className="w-full border-2 outline rounded-xl outline-gray-400">
+              <Header />
+              <Banner />
+            </div>
+          ) : (
             <Header />
-            <Banner />
-          </div>
-        ) : (
-          <Header />
-        )}
-        <Body />
-      </GadgetHavenContext.Provider>
+          )}
+          <Body />
+        </GadgetHavenContext.Provider>
+      </div>
       <Footer />
       <ToastContainer autoClose={3000} position="top-center" />
     </>
