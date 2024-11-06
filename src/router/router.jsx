@@ -34,6 +34,7 @@ export const router = createBrowserRouter([
         path: "/gadget/:gadgetID",
         element: <ProductDetails />,
         loader: ({ params }) => FetchSelectedGadget(params),
+        errorElement: <PageNotFound />,
       },
       {
         path: "*",
