@@ -1,3 +1,5 @@
+import { ShowToastMessage } from "./ShowToastMessage";
+
 export const RemoveFromCart = (
   setCart,
   productID,
@@ -11,4 +13,5 @@ export const RemoveFromCart = (
     total = Number(total);
     return total;
   });
+  ShowToastMessage(true, "Gadget removed from cart");
 };

@@ -5,6 +5,8 @@ import Footer from "../Footer/Footer";
 import { useLocation } from "react-router-dom";
 import Banner from "../Body/BodyComponents/Banner";
 import { GadgetHavenContext } from "../context/GadgetHavenContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Root = () => {
   let location = useLocation();
@@ -39,6 +41,7 @@ const Root = () => {
         <Body />
       </GadgetHavenContext.Provider>
       <Footer />
+      <ToastContainer autoClose={3000} position="top-center" />
     </>
   );
 };
