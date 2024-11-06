@@ -58,12 +58,15 @@ const ProductDetails = () => {
             ))}
           </div>
           <div>
-            <strong>Rating</strong>
+            <strong className="flex items-center">
+              Rating
+              <img className="w-3" src={GoldenStarIcon} alt="golden-star" />
+            </strong>
             <div className="flex items-center space-x-1">
-              <img className="w-3" src={GoldenStarIcon} alt="" />
-              <img className="w-3" src={GoldenStarIcon} alt="" />
-              <img className="w-3" src={GoldenStarIcon} alt="" />
-              <img className="w-3" src={GoldenStarIcon} alt="" />
+              <img className="w-3" src={GoldenStarIcon} alt="golden-star" />
+              <img className="w-3" src={GoldenStarIcon} alt="golden-star" />
+              <img className="w-3" src={GoldenStarIcon} alt="golden-star" />
+              <img className="w-3" src={GoldenStarIcon} alt="golden-star" />
               <img className="w-3" src={StarIcon} alt="" />
               <p className="text-xs p-2 rounded-full bg-slate-200">
                 {selectedGadget.rating}

@@ -25,17 +25,20 @@ const Statistics = () => {
   }, []);
 
   return (
-    <div className="mt-4 mx-auto">
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="price" fill="#8884d8" />
-        </BarChart>
-      </ResponsiveContainer>
+    <div>
+      <h1 className="text-xl font-bold">Statistics</h1>
+      <div className="mt-4 mx-auto bg-white">
+        <ResponsiveContainer width="100%" height={400}>
+          <BarChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="price" fill="#8884d8" />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 };
