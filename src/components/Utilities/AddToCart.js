@@ -13,9 +13,9 @@ export const AddToCart = (
       let total = currPrice + productPrice;
       total = total.toFixed(2);
       total = Number(total);
-      ShowToastMessage(true, "Gadget added to cart");
       return total;
     });
+    ShowToastMessage(true, "Gadget added to cart");
   } else {
     ShowToastMessage(false, "Gadget already in cart");
   }
