@@ -7,12 +7,14 @@ import About from "../components/Body/BodyComponents/About";
 import PageNotFound from "../components/Body/BodyComponents/PageNotFound";
 import ProductDetails from "../components/Body/BodyComponents/ProductDetails";
 import { FetchSelectedGadget } from "../components/Utilities/FetchSelectedGadget";
+import GadgetNotFound from "../components/Body/BodyComponents/GadgetNotFound";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     loader: () => fetch("/data/gadgets.json"),
+    errorElement: <PageNotFound />,
     children: [
       {
         path: "/",
@@ -34,11 +36,7 @@ export const router = createBrowserRouter([
         path: "/gadget/:gadgetID",
         element: <ProductDetails />,
         loader: ({ params }) => FetchSelectedGadget(params),
-        errorElement: <PageNotFound />,
-      },
-      {
-        path: "*",
-        element: <PageNotFound />,
+        errorElement: <GadgetNotFound />,
       },
     ],
   },
