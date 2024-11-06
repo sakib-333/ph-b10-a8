@@ -36,7 +36,7 @@ const Root = () => {
           }}
         >
           {location.pathname === "/" ? (
-            <div className="w-full border-2 outline rounded-xl outline-gray-400">
+            <div className="w-full md:border-2 md:outline rounded-xl md:outline-gray-400">
               <Header />
               <Banner />
             </div>

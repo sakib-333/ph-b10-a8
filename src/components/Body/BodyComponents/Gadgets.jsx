@@ -28,7 +28,7 @@ const Gadgets = () => {
   };
 
   return (
-    <div className="mt-[200px] p-3">
+    <div className="md:mt-[220px] p-3">
       <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold">
         Explore Cutting-Edge Gadgets
       </h1>
