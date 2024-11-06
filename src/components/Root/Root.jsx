@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../Header/Header";
 import Body from "../Body/Body";
 import Footer from "../Footer/Footer";
-import { useLocation } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 import Banner from "../Body/BodyComponents/Banner";
 import { GadgetHavenContext } from "../context/GadgetHavenContext";
 import { ToastContainer } from "react-toastify";
@@ -14,6 +14,11 @@ const Root = () => {
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const data = useLoaderData();
+
+  useEffect(() => {
+    setGadgets(data);
+  }, []);
 
   return (
     <>

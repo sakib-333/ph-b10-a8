@@ -4,18 +4,16 @@ import GoldenStarIcon from "/icons/golden-star-icon.svg";
 import StarIcon from "/icons/star-icon.svg";
 import CartWhiteIcon from "/icons/cart-white-icon.svg";
 import HeartIcon from "/icons/heart-icon.svg";
-import { useMatch } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { GadgetHavenContext } from "../../context/GadgetHavenContext";
 import { AddToCart } from "../../Utilities/AddToCart";
 import { AddToWishList } from "../../Utilities/AddToWishList";
 
 const ProductDetails = () => {
-  const { gadgets, cart, setCart, wishlist, setWishlist, setTotalPrice } =
+  const { cart, setCart, wishlist, setWishlist, setTotalPrice } =
     useContext(GadgetHavenContext);
-  const { params } = useMatch("/gadget/:id");
-  const selectedGadget = gadgets.find(
-    (gadget) => gadget.product_id == params.id
-  );
+  const selectedGadget = useLoaderData();
+
   useEffect(() => {
     document.title = "Product Details";
   }, []);

@@ -6,16 +6,17 @@ import Dashboard from "../components/Body/BodyComponents/Dashboard";
 import About from "../components/Body/BodyComponents/About";
 import PageNotFound from "../components/Body/BodyComponents/PageNotFound";
 import ProductDetails from "../components/Body/BodyComponents/ProductDetails";
+import { FetchSelectedGadget } from "../components/Utilities/FetchSelectedGadget";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    loader: () => fetch("/data/gadgets.json"),
     children: [
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("/data/gadgets.json"),
       },
       {
         path: "/statistics",
@@ -32,6 +33,7 @@ export const router = createBrowserRouter([
       {
         path: "/gadget/:gadgetID",
         element: <ProductDetails />,
+        loader: ({ params }) => FetchSelectedGadget(params),
       },
       {
         path: "*",
