@@ -53,7 +53,7 @@ const ProductDetails = () => {
             <strong className="text-black">Specification:</strong>
             {selectedGadget.Specification.map((feature, indx) => (
               <p key={`feature_${indx}`} className="text-sm">
-                {feature}
+                {indx + 1}. {feature}
               </p>
             ))}
           </div>
